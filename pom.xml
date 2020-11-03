@@ -9,11 +9,11 @@
     <version>2.3.4.RELEASE</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
-  <groupId>edu.canm.deepdive</groupId>
+  <groupId>edu.cnm.deepdive</groupId>
   <artifactId>codebreaker</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>codebreaker</name>
-  <description>Service ofr playing Codebreaker matches against other users.</description>
+  <description>Service for playing Codebreaker matches against other users.</description>
 
   <properties>
     <java.version>11</java.version>
@@ -35,6 +35,10 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
     </dependency>
 
     <dependency>
