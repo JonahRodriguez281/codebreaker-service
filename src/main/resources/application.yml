@@ -8,6 +8,8 @@ spring:
   datasource:
     url: jdbc:derby:codebreaker_db;create=true;collation=TERRITORY_BASED:PRIMARY
   jpa:
+    hibernate:
+      ddl-auto: update
 #    properties:
 #      javax:
 #        persistence:
@@ -16,8 +18,6 @@ spring:
 #            scripts:
 #              action: create
 #              create-target: ddl.sql
-    hibernate:
-      ddl-auto: update
 
 server:
   port: 18081
