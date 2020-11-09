@@ -9,6 +9,7 @@ import java.util.NoSuchElementException;
 import java.util.UUID;
 import javax.print.attribute.standard.Media;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.server.ExposesResourceFor;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/matches")
+@ExposesResourceFor(Match.class)
 public class MatchController {
   
   private final MatchService matchService;
@@ -42,7 +44,7 @@ public class MatchController {
   }
 
   @GetMapping(value = "/{matchId}/games", produces = MediaType.APPLICATION_JSON_VALUE)
-  public List<Game> getGmaes(@PathVariable UUID matchId) {
+  public List<Game> getGames(@PathVariable UUID matchId) {
     return matchService.getGames(matchId)
         .orElseThrow(NoSuchElementException::new);
   }
